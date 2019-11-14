@@ -1,5 +1,6 @@
 package com.example.registroautor;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -32,4 +33,9 @@ public class Vistaprincipal extends AppCompatActivity {
         });
     }
 
+
+    public void pasarAregistrarHimnario(View view) {
+        Intent intent = new Intent(Vistaprincipal.this, MainActivity.class);
+        startActivity(intent);
+    }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#746985"
+    android:background="@drawable/fondoprincipal"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Vistaprincipal"
     tools:showIn="@layout/activity_vistaprincipal">
@@ -19,9 +19,31 @@
         android:textAlignment="center"/>
 
     <Button
+        android:id="@+id/btnregistrarhimnario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Registrar Himnario"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btnregistrarautor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="pasarAregistrarHimnario"
+        android:text="Registrar Autor"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/btnmostrartodosloshimnarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Mostrar Todos los Himarios"
+        android:layout_gravity="center"
         />
 
 
