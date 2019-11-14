@@ -12,6 +12,8 @@ import android.view.View;
 
 public class Vistaprincipal extends AppCompatActivity {
 
+    String vista;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
