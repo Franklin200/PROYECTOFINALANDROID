@@ -13,6 +13,7 @@ import android.view.View;
 public class Vistaprincipal extends AppCompatActivity {
 
     String vista;
+    String vb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
