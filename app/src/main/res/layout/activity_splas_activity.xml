@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/splas1"
+    tools:context=".splas_activity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="ITCA FEPADE ZACATECOLUCA"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="Tecnico en Ingenieria de Sistemas Informaticos"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp"
+        android:text="Instructor: Manuel de Jesus Gamez"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        />
+    <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="350dp"
+       android:text="Integrantes: \n (desarrolladores)"
+       android:textSize="30dp"
+       android:textAlignment="center"
+       android:textColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:text="Franklin Alexis Flores Colindres"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:text="Gissela Margarita Carcamo Ceron"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
+        android:text="Joselin Elizabeth Melara Esquivel"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:text="Gilma Esmeralda Reyes Cruz"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        />
+</RelativeLayout>

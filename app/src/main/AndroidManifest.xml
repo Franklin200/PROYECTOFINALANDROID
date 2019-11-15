@@ -2,11 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.registroautor">
 
-<<<<<<< HEAD
     <uses-permission android:name="android.permission.INTERNET" />
 
-=======
->>>>>>> a451e33101d3de423c03f01adb21d81a1cbd525f
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,11 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Vistaprincipal"
+
+        <activity android:name=".Vistaprincipal"
             android:label="@string/title_activity_vistaprincipal"
             android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
+        <activity android:name=".splas_activity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +33,5 @@
 
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

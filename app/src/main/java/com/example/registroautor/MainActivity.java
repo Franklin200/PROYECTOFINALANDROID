@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,15 +22,16 @@ public class MainActivity extends AppCompatActivity {
     private Button btnguardarautor, btnlimpiar, btnconsultardui;
 
     String frank;
+    boolean inputDui, inputN, inputE, inputD = false;
+
 
     MantenimientoMySQL manto = new MantenimientoMySQL();
-
-    boolean inputDui, inputN, inputE, inputD = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         btnguardarautor = (Button)findViewById(R.id.btn_guardarautor);
         btnlimpiar = (Button)findViewById(R.id.btn_nuevo);
@@ -137,6 +139,18 @@ public class MainActivity extends AppCompatActivity {
         etnombre.setText(null);
         etedad.setText(null);
         etdescripcion.setText(null);
+    }
+
+    public void guardarautor(View view) {
+
+        String dui = etdui.getText().toString();
+
+        String nombre = etnombre.getText().toString();
+        String edad = etedad.getText().toString();
+        String descripcion = etdescripcion.getText().toString();
+
+        manto.guardarautor(MainActivity.this, dui, nombre, edad, descripcion);
+
     }
 
     @Override

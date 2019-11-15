@@ -1,5 +1,6 @@
 package com.example.registroautor;
 
+
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -10,11 +11,17 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.widget.Toast;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,10 +37,8 @@ public class MantenimientoMySQL {
     AlertDialog.Builder dialogo;
     ProgressDialog progressDialog;
 
-
-
     public void guardarautor(final Context context, final String dui, final String nombre, final String edad, final String descripcion){
-        String url = Config.urlGuardarautor;
+        String url = Config.urlGuardar;
         //String url = "localhost/democrudsis21a/guardar.php";
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -48,7 +53,10 @@ public class MantenimientoMySQL {
 
                             if(estado.equals("1")){
                                 Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();
-                                Toast.makeText(context, "Registro almacenado en MySQL.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Registro almacenado en MySQL.", Toast.LENGTH_SHORT).show();
+
+                                //Toast.makeText(context, "Registro almacenado en MySQL.", Toast.LENGTH_SHORT).show();
+
                             }else if(estado.equals("2")){
                                 Toast.makeText(context, ""+mensaje, Toast.LENGTH_SHORT).show();
                             }
@@ -84,6 +92,7 @@ public class MantenimientoMySQL {
         MySingleton.getInstance(context).addToRequestQueue(request);
 
     }
+
 
     public void consultardui(final Context context, final String dui){
         progressDialog = new ProgressDialog(context);

@@ -142,6 +142,8 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="30dp"
                 android:text="Limpiar"
+                android:onClick="guardarautor"
+
                 android:textColor="#0A0A0A"
                 android:background="@drawable/estiloboton"
                 android:shadowColor="#2314A8"
