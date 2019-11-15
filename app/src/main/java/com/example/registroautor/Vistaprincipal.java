@@ -31,13 +31,18 @@ public class Vistaprincipal extends AppCompatActivity {
     }
 
 
-    public void pasarAregistrarHimnario(View view) {
+    public void pasarAregistrarAutor(View view) {
         Intent intent = new Intent(Vistaprincipal.this, MainActivity.class);
         startActivity(intent);
     }
 
     public void pasarAdemo(View view) {
         Intent intent = new Intent(Vistaprincipal.this, demo.class);
+        startActivity(intent);
+    }
+
+    public void pasarAregistrarHimnario(View view) {
+        Intent intent = new Intent(Vistaprincipal.this, RegistrarHimnario.class);
         startActivity(intent);
     }
 }
