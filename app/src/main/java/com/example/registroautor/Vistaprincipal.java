@@ -35,4 +35,9 @@ public class Vistaprincipal extends AppCompatActivity {
         Intent intent = new Intent(Vistaprincipal.this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void pasarAdemo(View view) {
+        Intent intent = new Intent(Vistaprincipal.this, demo.class);
+        startActivity(intent);
+    }
 }

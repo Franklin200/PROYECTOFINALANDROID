@@ -46,6 +46,14 @@
         android:layout_gravity="center"
         />
 
-
+    <Button
+        android:id="@+id/btnmostrardemo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Demostracion"
+        android:layout_gravity="center"
+        android:onClick="pasarAdemo"
+        />
 
 </LinearLayout>
