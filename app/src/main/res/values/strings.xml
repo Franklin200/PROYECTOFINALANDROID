@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">RegistroAutor</string>
     <string name="action_settings">Settings</string>
-<<<<<<< HEAD
+
     <string name="title_activity_menuprincipal">Menuprincipal</string>
-=======
+
     <string name="title_activity_vistaprincipal">Vistaprincipal</string>
->>>>>>> a451e33101d3de423c03f01adb21d81a1cbd525f
+
 </resources>

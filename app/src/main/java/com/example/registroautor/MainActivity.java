@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 import android.view.Menu;
@@ -31,9 +32,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         btnguardarautor = (Button)findViewById(R.id.btn_guardarautor);
         btnlimpiar = (Button)findViewById(R.id.btn_nuevo);
         btnconsultardui = (Button)findViewById(R.id.btn_consultarAutordui);
+
+
+
         etdui = (EditText)findViewById(R.id.et_dui);
         etnombre = (EditText)findViewById(R.id.et_nombre);
         etedad = (EditText)findViewById(R.id.et_edad);

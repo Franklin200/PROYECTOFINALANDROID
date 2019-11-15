@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EBEBE9"
@@ -18,10 +19,11 @@
         android:clickable="true"
         >
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="0dp">
+        android:padding="0dp"/>
 
         <ImageView
             android:id="@+id/imageView"
@@ -30,7 +32,7 @@
             android:padding="4dp" />
 
         <TextView
-            android:id="@+id/textViewDuiAutor"
+            android:id="@+id/textViewDui"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -40,10 +42,10 @@
             android:textColor="#000000" />
 
         <TextView
-            android:id="@+id/textViewDUI"
+            android:id="@+id/textViewDui1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewDuiAutor"
+            android:layout_below="@id/textViewDui"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="1dp"
             android:layout_toRightOf="@id/imageView"
@@ -54,7 +56,7 @@
             android:id="@+id/textViewNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewDUI"
+            android:layout_below="@id/textViewDui1"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="1dp"
             android:layout_toRightOf="@id/imageView"
@@ -66,7 +68,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewNombreAutor"
+            android:id="@+id/textViewNombre1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textViewNombre"
@@ -78,10 +80,10 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textViewedad"
+            android:id="@+id/textViewEdad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewEdad"
+            android:layout_below="@id/textViewEdad1"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/imageView"
             android:text="Descripcion: "
@@ -89,41 +91,43 @@
             android:textColor="#000000" />
 
         <TextView
-            android:id="@+id/textViewEdad"
+            android:id="@+id/textViewEdad1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewedad"
+            android:layout_below="@id/textViewEdad"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="1dp"
             android:layout_toRightOf="@id/imageView"
             android:text="..."
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
-
-        <TextView
-            android:id="@+id/textViewdescripcion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewDescripcion"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/imageView"
-            android:text="Edad: "
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/textViewDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewdescripcion"
+            android:layout_below="@id/textViewDescripcion1"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="1dp"
             android:layout_toRightOf="@id/imageView"
-            android:text="..."
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+            android:text="Dscripcion: "
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textViewDescripcion1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewDescripcion"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/imageView"
+            android:text="Descripcion: "
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="#000000" />
 
 
-    </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
 
-</LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
