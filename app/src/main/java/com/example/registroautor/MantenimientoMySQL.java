@@ -38,27 +38,30 @@ public class MantenimientoMySQL {
     ProgressDialog progressDialog;
 
     public void guardarautor(final Context context, final String dui, final String nombre, final String edad, final String descripcion){
-        String url = Config.urlGuardar;
+        //Toast.makeText(context, "probando", Toast.LENGTH_SHORT).show();
+        String url = Config.urlGuardarautor;
         //String url = "localhost/democrudsis21a/guardar.php";
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         //En este método se recibe la respuesta en json desde el web service o API.
-
+                        //Toast.makeText(context, "recibe json" + response, Toast.LENGTH_SHORT).show();
                         try{
                             JSONObject requestJSON = new JSONObject(response.toString());
                             String estado = requestJSON.getString("estado");
                             String mensaje = requestJSON.getString("mensaje");
 
+                            //Toast.makeText(context, "" + estado + mensaje, Toast.LENGTH_SHORT).show();
+
                             if(estado.equals("1")){
-                                Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();
-                            Toast.makeText(context, "Registro almacenado en MySQL.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, ""  + mensaje, Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(context, "Registro almacenado en MySQL.", Toast.LENGTH_SHORT).show();
 
                                 //Toast.makeText(context, "Registro almacenado en MySQL.", Toast.LENGTH_SHORT).show();
 
                             }else if(estado.equals("2")){
-                                Toast.makeText(context, ""+mensaje, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, ""  + mensaje, Toast.LENGTH_SHORT).show();
                             }
 
                         }catch (JSONException e){

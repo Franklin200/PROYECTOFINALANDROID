@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toast.makeText(this, "pobando2", Toast.LENGTH_SHORT).show();
+
 
         btnguardarautor = (Button)findViewById(R.id.btn_guardarautor);
         btnlimpiar = (Button)findViewById(R.id.btn_nuevo);
@@ -94,13 +96,11 @@ public class MainActivity extends AppCompatActivity {
                 if (inputDui && inputN && inputE && inputD){
 
                     String dui = etdui.getText().toString();
-
-                     String nombre = etnombre.getText().toString();
-                     String edad = etedad.getText().toString();
+                    String nombre = etnombre.getText().toString();
+                    String edad = etedad.getText().toString();
                      String descripcion = etdescripcion.getText().toString();
 
-                     manto.guardarautor(MainActivity.this, dui, nombre, edad, descripcion);
-                    Toast.makeText(MainActivity.this, "Registrado almacenado correctamente", Toast.LENGTH_SHORT).show();
+                      manto.guardarautor(MainActivity.this, dui, nombre, edad, descripcion);
                     Limpiar();
                     etdui.requestFocus();
             }else {
@@ -144,18 +144,17 @@ public class MainActivity extends AppCompatActivity {
         etedad.setText(null);
         etdescripcion.setText(null);
     }
-
+/*
     public void guardarautor(View view) {
-
+        //Toast.makeText(this, "sbhdbgf", Toast.LENGTH_SHORT).show();
         String dui = etdui.getText().toString();
-
         String nombre = etnombre.getText().toString();
         String edad = etedad.getText().toString();
         String descripcion = etdescripcion.getText().toString();
 
         manto.guardarautor(MainActivity.this, dui, nombre, edad, descripcion);
 
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
