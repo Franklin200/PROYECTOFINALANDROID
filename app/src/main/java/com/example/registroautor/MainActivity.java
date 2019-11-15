@@ -11,19 +11,29 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText etdui, etnombre, etedad, etdescripcion;
+    private Button btnguardarautor, btnlimpiar, btnconsultardui;
+
+    String frank;
 
     MantenimientoMySQL manto = new MantenimientoMySQL();
+
+    boolean inputDui, inputN, inputE, inputD = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnguardarautor = (Button)findViewById(R.id.btn_guardarautor);
+        btnlimpiar = (Button)findViewById(R.id.btn_nuevo);
+        btnconsultardui = (Button)findViewById(R.id.btn_consultarAutordui);
         etdui = (EditText)findViewById(R.id.et_dui);
         etnombre = (EditText)findViewById(R.id.et_nombre);
         etedad = (EditText)findViewById(R.id.et_edad);
@@ -43,18 +53,90 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        btnguardarautor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (etdui.getText().toString().length() == 0) {
+                    etdui.setError("Campo obligatorio");
+                    inputDui = false;
+                } else {
+                    inputDui = true;
+                }
+
+                if (etnombre.getText().toString().length() == 0) {
+                    etnombre.setError("Campo obligatorio");
+                    inputN = false;
+                } else {
+                    inputN = true;
+                }
+
+                if (etedad.getText().toString().length() == 0) {
+                    etedad.setError("Campo obligatorio");
+                    inputE = false;
+                } else {
+                    inputE = true;
+                }
+
+                if (etdescripcion.getText().toString().length() == 0) {
+                    etdescripcion.setError("Campo obligatorio");
+                    inputD = false;
+                } else {
+                    inputD = true;
+                }
+
+                if (inputDui && inputN && inputE && inputD){
+
+                    String dui = etdui.getText().toString();
+
+                     String nombre = etnombre.getText().toString();
+                     String edad = etedad.getText().toString();
+                     String descripcion = etdescripcion.getText().toString();
+
+                     manto.guardarautor(MainActivity.this, dui, nombre, edad, descripcion);
+                    Toast.makeText(MainActivity.this, "Registrado almacenado correctamente", Toast.LENGTH_SHORT).show();
+                    Limpiar();
+                    etdui.requestFocus();
+            }else {
+                    Toast.makeText(MainActivity.this, "ERROR... \n Verifique los datos", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        btnconsultardui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(etdui.getText().toString().length()==0){
+                    etdui.setError("campo obligatorio");
+                    inputDui = false;
+                }else {
+                    inputDui=true;
+                }
+
+                if(inputDui) {
+                    String dui = etdui.getText().toString();
+                    manto.consultardui(MainActivity.this, dui);
+                    etdui.requestFocus();
+                }
+            }
+        });
+
+        btnlimpiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Limpiar();
+            }
+        });
+
+
     }
 
-    public void guardarautor(View view) {
-
-        String dui = etdui.getText().toString();
-
-        String nombre = etnombre.getText().toString();
-        String edad = etedad.getText().toString();
-        String descripcion = etdescripcion.getText().toString();
-
-        manto.guardarautor(MainActivity.this, dui, nombre, edad, descripcion);
-
+    public void Limpiar(){
+        etdui.setText(null);
+        etnombre.setText(null);
+        etedad.setText(null);
+        etdescripcion.setText(null);
     }
 
     @Override
