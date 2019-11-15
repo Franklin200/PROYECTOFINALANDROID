@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:text="Tecnico en Ingenieria de Sistemas Informaticos"
         android:textSize="20dp"
         android:textAlignment="center"
@@ -31,7 +31,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="250dp"
         android:text="Instructor: Manuel de Jesus Gamez"
         android:textSize="20dp"
         android:textAlignment="center"
@@ -40,7 +40,7 @@
     <TextView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:layout_marginTop="350dp"
+       android:layout_marginTop="300dp"
        android:text="Integrantes: \n (desarrolladores)"
        android:textSize="30dp"
        android:textAlignment="center"
@@ -49,7 +49,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="400dp"
         android:text="Franklin Alexis Flores Colindres"
         android:textSize="20dp"
         android:textAlignment="center"
@@ -59,7 +59,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="450dp"
         android:text="Gissela Margarita Carcamo Ceron"
         android:textSize="20dp"
         android:textAlignment="center"
@@ -69,7 +69,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="550dp"
+        android:layout_marginTop="500dp"
         android:text="Joselin Elizabeth Melara Esquivel"
         android:textSize="20dp"
         android:textAlignment="center"
@@ -79,7 +79,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="550dp"
         android:text="Gilma Esmeralda Reyes Cruz"
         android:textSize="20dp"
         android:textAlignment="center"
