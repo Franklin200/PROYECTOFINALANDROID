@@ -139,17 +139,6 @@ public class MainActivity extends AppCompatActivity {
         etedad.setText(null);
         etdescripcion.setText(null);
     }
-/*
-    public void guardarautor(View view) {
-        //Toast.makeText(this, "sbhdbgf", Toast.LENGTH_SHORT).show();
-        String dui = etdui.getText().toString();
-        String nombre = etnombre.getText().toString();
-        String edad = etedad.getText().toString();
-        String descripcion = etdescripcion.getText().toString();
-
-        manto.guardarautor(MainActivity.this, dui, nombre, edad, descripcion);
-
-    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
