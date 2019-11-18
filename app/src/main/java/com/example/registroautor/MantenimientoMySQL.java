@@ -3,6 +3,7 @@ package com.example.registroautor;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 
@@ -17,6 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -146,6 +148,60 @@ public class MantenimientoMySQL {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<String, String>();
                 map.put("dui",dui);
+                return map;
+            }
+        };
+
+        MySingleton.getInstance(context).addToRequestQueue(stringRequest);
+
+    }
+
+    public void llenarspinner(final Context context, final String dui, final String nombre, final String edad, final String descripcion, String lista){
+        progressDialog = new ProgressDialog(context);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Espere por favor, Estamos trabajando en su petición en el servidor");
+        progressDialog.show();
+
+        String url  = Config.urlobtenerdatos;
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,new Response.Listener<String>() {
+            /* @RequiresApi(api = Build.VERSION_CODES.M)
+             @SuppressLint("ResourceType")
+             @Override*/
+            public void onResponse(String response) {
+                if(response.equals("0")) {
+                    Toast.makeText(context, "No se encontrarón resultados...", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                }else{
+                    ArrayList<Dto_autor> lista  = new ArrayList <Dto_autor>();
+
+                    try {
+                        JSONArray jsonArray = new JSONArray();
+                        for (int i = 0; i < jsonArray.length(); i++){
+                            Dto_autor a = new Dto_autor();
+                            a.setNombre(jsonArray.getJSONObject(i).getString("nombre"));
+
+                            lista.add(a);
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+                progressDialog.dismiss();
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        if(error != null){
+                            Toast.makeText(context, "No se ha podido establecer conexión con el servidor. Verifique su acceso a Internet.", Toast.LENGTH_LONG).show();
+                            progressDialog.dismiss();
+                        }
+                    }
+                }) {
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<String, String>();
+                map.put("nombre",nombre);
                 return map;
             }
         };

@@ -33,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(this, "pobando2", Toast.LENGTH_SHORT).show();
-
-
         btnguardarautor = (Button)findViewById(R.id.btn_guardarautor);
         btnlimpiar = (Button)findViewById(R.id.btn_nuevo);
         btnconsultardui = (Button)findViewById(R.id.btn_consultarAutordui);
