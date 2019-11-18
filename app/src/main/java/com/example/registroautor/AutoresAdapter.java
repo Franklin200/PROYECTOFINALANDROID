@@ -25,7 +25,7 @@ public class AutoresAdapter extends  RecyclerView.Adapter<AutoresAdapter.AutorVi
     @Override
     public AutorViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-       View view = inflater.inflate(R.layout.list_layout, null);
+        View view = inflater.inflate(R.layout.list_layout, null);
         return new AutorViewHolder(view);
     }
 
@@ -50,9 +50,9 @@ public class AutoresAdapter extends  RecyclerView.Adapter<AutoresAdapter.AutorVi
         public AutorViewHolder(View itemView) {
             super(itemView);
 
-          //  textViewDUI = itemView.findViewById(R.id.textViewDUI);
-           // textViewNombreAutor = itemView.findViewById(R.id.textViewNombreAutor);
-           // textViewEdad = itemView.findViewById(R.id.textViewEdad);
+            //  textViewDUI = itemView.findViewById(R.id.textViewDUI);
+            // textViewNombreAutor = itemView.findViewById(R.id.textViewNombreAutor);
+            // textViewEdad = itemView.findViewById(R.id.textViewEdad);
             //textViewDescripcion = itemView.findViewById(R.id.textViewDescripcion);
 
             textViewDui1 = itemView.findViewById(R.id.textViewDui1);
