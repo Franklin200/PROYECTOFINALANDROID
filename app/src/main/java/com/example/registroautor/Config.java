@@ -16,8 +16,6 @@ public class Config {
     private static final String URL = "http://mjgl.com.sv/mysqlcrud/Api.php";
 
 
-
-
     public static final String URL_WEB_SERVICES ="http://192.168.43.142/proyectomysql/"; //llenar el spinner con datos de la tabla tb_autor
     public static final String TAG_USERNAME = "username";
 
