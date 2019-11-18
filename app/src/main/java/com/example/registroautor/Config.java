@@ -2,10 +2,11 @@ package com.example.registroautor;
 
 public class Config {
 
-
+    //tabla autor
     public static final String urlGuardarautor = "http://192.168.43.142/proyectomysql/guardarAutor.php";  //guardar en la tabla autor
 
-    public static final String urlGuardarhimanrio = "http://192.168.187.113/proyectomysql/guardarAutor.php";  //guardar en la tabla himnario
+    //tabla himnario
+    public static final String urlGuardarhimanario = "http://192.168.43.142/proyectomysql/guardarHimnario.php";  //guardar en la tabla himnario
 
     public static final String urlobtenerdatos = "http://192.168.43.142/proyectomysql/obtenertodo.php";  //obtener todos los datos
 

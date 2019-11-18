@@ -55,9 +55,9 @@ public class AutoresAdapter extends  RecyclerView.Adapter<AutoresAdapter.AutorVi
             // textViewEdad = itemView.findViewById(R.id.textViewEdad);
             //textViewDescripcion = itemView.findViewById(R.id.textViewDescripcion);
 
-            textViewDui1 = itemView.findViewById(R.id.textViewDui1);
-            textViewNombre1 = itemView.findViewById(R.id.textViewNombre1);
-            textViewEdad1 = itemView.findViewById(R.id.textViewEdad1);
+            textViewDui1 = itemView.findViewById(R.id.textViewCodigo1);
+            textViewNombre1 = itemView.findViewById(R.id.textViewPrecio1);
+            textViewEdad1 = itemView.findViewById(R.id.textViewPrecio1);
             textViewDescripcion1 = itemView.findViewById(R.id.textViewDescripcion1);
 
         }

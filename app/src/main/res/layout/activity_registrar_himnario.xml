@@ -39,7 +39,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Ingrese el titulo de la labanza"
-                android:inputType="number"
                 android:background="@drawable/estiloedittext"
                 android:shadowRadius="5"
                 android:paddingLeft="25dp"
@@ -71,7 +70,6 @@
                 android:hint="Ingrese la categoria"
                 android:layout_marginRight="12dp"
                 android:layout_marginLeft="12dp"
-                android:inputType="number"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estiloedittext"
                 android:paddingLeft="25dp"
@@ -81,20 +79,6 @@
 
             <EditText
                 android:id="@+id/et_fecha"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Ingrese la fecha del himanrio"
-                android:layout_marginRight="12dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/estiloedittext"
-                android:paddingLeft="25dp"
-                android:drawableStart="@drawable/ic_descripcion"
-                android:drawablePadding="5dp"
-                />
-
-            <EditText
-                android:id="@+id/et_edad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Ingrese la fecha del himanrio"
@@ -118,7 +102,7 @@
 
 
             <Button
-                android:id="@+id/btn_guardarautor"
+                android:id="@+id/btnguardarhimnario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"

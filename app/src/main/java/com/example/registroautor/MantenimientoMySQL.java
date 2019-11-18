@@ -3,7 +3,6 @@ package com.example.registroautor;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 
@@ -207,6 +206,66 @@ public class MantenimientoMySQL {
         };
 
         MySingleton.getInstance(context).addToRequestQueue(stringRequest);
+
+    }
+
+    public void guardarhimnario(final Context context, final String titulo, final String descripcion, final String categoria, final String fecha, final String dui){
+        //Toast.makeText(context, "probando", Toast.LENGTH_SHORT).show();
+        String url = Config.urlGuardarhimanario;
+        //String url = "localhost/democrudsis21a/guardar.php";
+        StringRequest request = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        //En este método se recibe la respuesta en json desde el web service o API.
+                        Toast.makeText(context, "recibe json" + response, Toast.LENGTH_SHORT).show();
+                        try{
+                            JSONObject requestJSON = new JSONObject(response.toString());
+                            String estado = requestJSON.getString("estado");
+                            String mensaje = requestJSON.getString("mensaje");
+
+                            //Toast.makeText(context, "" + estado + mensaje, Toast.LENGTH_SHORT).show();
+
+                            if(estado.equals("1")){
+                                Toast.makeText(context, ""  + mensaje, Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(context, "Registro almacenado en MySQL.", Toast.LENGTH_SHORT).show();
+
+                                //Toast.makeText(context, "Registro almacenado en MySQL.", Toast.LENGTH_SHORT).show();
+
+                            }else if(estado.equals("2")){
+                                Toast.makeText(context, ""  + mensaje, Toast.LENGTH_SHORT).show();
+                            }
+
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                            //Toast.makeText(context, "Se encontrarón problemas...", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //En este método se notifica al usuario acerca de un posible error al tratar de
+                //realizar una acción cualquier en la base de datos remota.
+                Toast.makeText(context, "No se puedo guardar. \n" +
+                        "Verifique su acceso a internet.", Toast.LENGTH_SHORT).show();
+            }
+        }){
+            protected Map<String, String> getParams() throws AuthFailureError {
+                //En este método se colocan o se setean los valores a recibir por el fichero *.php
+                Map<String, String> map = new HashMap<>();
+                map.put("Content-Type", "application/json; charset=utf-8");
+                map.put("Accept", "application/json");
+                map.put("titulo", titulo);
+                map.put("descripcion", descripcion);
+                map.put("categoria", categoria);
+                map.put("fecha", fecha);
+                map.put("dui",dui);
+                return map;
+            }
+        };
+
+        MySingleton.getInstance(context).addToRequestQueue(request);
 
     }
 }
