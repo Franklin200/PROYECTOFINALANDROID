@@ -10,7 +10,7 @@ public class Config {
 
     public static final String urlobtenerdatos = "http://192.168.43.142/proyectomysql/obtenertodo.php";  //obtener todos los datos
 
-    public static final String urlConsultacodigo = "http://192.168.43.136/proyectomysql/guardarAutor.php";
+    public static final String urlConsultacodigo = "http://192.168.43.136/proyectomysql/sdfsf.php";
 
     public static final String urlGuardar = "http://192.168.43.136/proyectomysql/guardarAutor.php";
 
