@@ -107,6 +107,8 @@ public class MantenimientoMySQL {
                     @SuppressLint("ResourceType")
                     @Override
                     public void onResponse(String response) {
+
+                        Toast.makeText(context, ""+response, Toast.LENGTH_SHORT).show();
                         if(response.equals("0")) {
                             Toast.makeText(context, "No se encontrarón resultados para la búsqueda especificada.", Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();

@@ -1,10 +1,13 @@
 package com.example.registroautor;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -23,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
     String frank;
     boolean inputDui, inputN, inputE, inputD = false;
 
+    AlertDialog.Builder dialogo;
+    AlertDialog.Builder dialog;
+
+    String senal = "";
+    String dui = "";
+    String nombre = "";
+    String edad = "";
+    String descripcion = "";
 
     MantenimientoMySQL manto = new MantenimientoMySQL();
 
@@ -54,6 +65,34 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+        //BLOQUE DE CÓDIGO PARA MOSTRAR DATOS DE LA BUSQUEDA//
+        try {
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            if (bundle != null) {
+
+                senal = bundle.getString("senal");
+                dui = bundle.getString("dui");
+                nombre = bundle.getString("nombre");
+                edad = bundle.getString("edad");
+                descripcion = bundle.getString("descripcion");
+                if (senal.equals("1")) {
+                    etdui.setText(dui);
+                    etnombre.setText(nombre);
+                    etedad.setText(edad);
+                    etdescripcion.setText(descripcion);
+                    //finish();
+                    dialog.show();
+
+                }else{
+                    Toast.makeText(this, "Error al cargar los datos", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }catch (Exception e){
+
+        }
 
 
         btnguardarautor.setOnClickListener(new View.OnClickListener() {
