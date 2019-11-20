@@ -31,7 +31,7 @@
                 android:padding="4dp" />
 
             <TextView
-                android:id="@+id/textViewCodigo"
+                android:id="@+id/textViewDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -41,10 +41,10 @@
                 android:textColor="#000000" />
 
             <TextView
-                android:id="@+id/textViewCodigo1"
+                android:id="@+id/textViewDescripcionAut"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textViewCodigo"
+                android:layout_below="@id/textViewDescripcion"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="1dp"
                 android:layout_toRightOf="@id/imageView"
@@ -52,10 +52,10 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
             <TextView
-                android:id="@+id/textViewDescripcion"
+                android:id="@+id/textViewTituloAla"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textViewCodigo1"
+                android:layout_below="@id/textViewDescripcionAut"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="1dp"
                 android:layout_toRightOf="@id/imageView"
@@ -67,10 +67,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewDescripcion1"
+                android:id="@+id/textViewTituloAla1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textViewDescripcion"
+                android:layout_below="@id/textViewTituloAla"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="1dp"
                 android:layout_toRightOf="@id/imageView"
@@ -79,10 +79,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewPrecio"
+                android:id="@+id/textViewFecha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textViewDescripcion1"
+                android:layout_below="@id/textViewTituloAla1"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/imageView"
                 android:text="Fecha: "
@@ -90,10 +90,10 @@
                 android:textColor="#000000" />
 
             <TextView
-                android:id="@+id/textViewPrecio1"
+                android:id="@+id/textViewFecha1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textViewPrecio"
+                android:layout_below="@id/textViewFecha"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="1dp"
                 android:layout_toRightOf="@id/imageView"
