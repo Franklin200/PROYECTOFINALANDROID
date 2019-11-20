@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnguardarautor = (Button)findViewById(R.id.btn_guardarautor);
-        btnlimpiar = (Button)findViewById(R.id.btn_nuevo);
+        btnlimpiar = (Button)findViewById(R.id.btn_nuevoAutor);
         btnconsultardui = (Button)findViewById(R.id.btn_consultarAutordui);
         btneliminarautores = (Button)findViewById(R.id.btn_EliminarAutor);
         btnactualizarAutores = (Button)findViewById(R.id.btn_actualizarAutores);
@@ -206,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
                     datosAutor.setNombre(nombre);
                     datosAutor.setEdad(Integer.parseInt(edad));
                     datosAutor.setEdad(Integer.parseInt(edad));
+                    datosAutor.setDescripcion(descripcion);
 
                     manto.actualizarAutores(MainActivity.this, datosAutor);
                     Limpiar();

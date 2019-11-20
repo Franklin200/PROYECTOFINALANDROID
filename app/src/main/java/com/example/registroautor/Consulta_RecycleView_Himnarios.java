@@ -1,5 +1,10 @@
 package com.example.registroautor;
 
+<<<<<<< HEAD
+public class Consulta_RecycleView_Himnarios {
+
+}
+=======
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -149,3 +154,4 @@ public class Consulta_RecycleView_Himnarios extends AppCompatActivity {
 
 
 
+>>>>>>> de13357593c82fbbe4978899e69a7e8711d83d46
