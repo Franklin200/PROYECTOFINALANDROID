@@ -9,7 +9,7 @@ public class Config {
 
     public static final String urlEliminarAutores = "http://192.168.43.136/proyectomysql/eliminarAutor.php";  //Elimainar de la tabña autor
 
-    public static final String uractualizarAutores = "http://192.168.43.136/proyectomysql/actualizarAutor.php";
+    public static final String uractualizarAutores = "http://192.168.43.136/proyectomysql/actualizarAutor.php"; //actualizar la tabla autores
 
     //tabla himnario
     public static final String urlGuardarhimanario = "http://192.168.43.142/proyectomysql/guardarHimnario.php";  //guardar en la tabla himnario
