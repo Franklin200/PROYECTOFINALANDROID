@@ -15,9 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -91,12 +93,58 @@ public class Consulta_RecycleView_Himnarios extends AppCompatActivity {
 
         //Toast.makeText(this, "Si", Toast.LENGTH_SHORT).show();
 
-       
+        loadHimnarios();
 
     }
 
 
+    private void loadHimnarios() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        //Toast.makeText(Consulta_RecyclerView.this, ""+response, Toast.LENGTH_SHORT).show();
+
+                        try {
+                            JSONArray array = new JSONArray(response);
+                            int totalEncontrados = array.length();
+
+
+                            for (int i = 0; i < array.length(); i++) {
+
+                                JSONObject articulosObject = array.getJSONObject(i);
+
+                                HimnariosList.add(new Himnarios(
+                                        articulosObject.getString("titulo"),
+                                        articulosObject.getString("descripcion"),
+                                        articulosObject.getString("categoria"),
+                                        articulosObject.getString("fecha"),
+                                        articulosObject.getString("img")));
                             }
+
+
+                            adapter = new AdaptadorHimnarios(Consulta_RecycleView_Himnarios.this, HimnariosList);
+                            recyclerView.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(Consulta_RecycleView_Himnarios.this, "Error. Compruebe su acceso a Internet.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //Volley.newRequestQueue(this).add(stringRequest);
+        // MySingleton.getInstance(this).addToRequestQueue(stringRequest);
+        MySingleton.getInstance(Consulta_RecycleView_Himnarios.this).addToRequestQueue(stringRequest);
+    }
+
+                    }
 
 
 
