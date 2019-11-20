@@ -7,7 +7,7 @@ public class Config {
 
     public static final String urlBuscarporDui = "http://192.168.43.136/proyectomysql/buscarAutoresDui.php";   //buscar  autores por dui
 
-
+    public static final String urlEliminarAutores = "http://192.168.43.136/proyectomysql/eliminarAutor.php";  //Elimainar de la tabña autor
 
     //tabla himnario
     public static final String urlGuardarhimanario = "http://192.168.43.142/proyectomysql/guardarHimnario.php";  //guardar en la tabla himnario
