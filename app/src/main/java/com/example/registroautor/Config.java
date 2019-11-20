@@ -5,6 +5,8 @@ public class Config {
     //tabla autor
     public static final String urlGuardarautor = "http://192.168.43.142/proyectomysql/guardarAutor.php";  //guardar en la tabla autor
 
+    public static final String urlBuscarporDui = "http://localhost/proyectomysql/buscarAutoresDui.php";   //buscar  autores por dui
+
     //tabla himnario
     public static final String urlGuardarhimanario = "http://192.168.43.142/proyectomysql/guardarHimnario.php";  //guardar en la tabla himnario
 
