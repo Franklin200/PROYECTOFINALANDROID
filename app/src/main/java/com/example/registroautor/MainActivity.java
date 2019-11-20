@@ -21,7 +21,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private EditText etdui, etnombre, etedad, etdescripcion;
-    private Button btnguardarautor, btnlimpiar, btnconsultardui;
+    private Button btnguardarautor, btnlimpiar, btnconsultardui, btneliminarautores;
 
     String frank;
     boolean inputDui, inputN, inputE, inputD = false;
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         btnguardarautor = (Button)findViewById(R.id.btn_guardarautor);
         btnlimpiar = (Button)findViewById(R.id.btn_nuevo);
         btnconsultardui = (Button)findViewById(R.id.btn_consultarAutordui);
+        btneliminarautores = (Button)findViewById(R.id.btn_EliminarAutor);
 
 
 
@@ -157,6 +158,26 @@ public class MainActivity extends AppCompatActivity {
                 if(inputDui) {
                     String dui = etdui.getText().toString();
                     manto.consultarDui(MainActivity.this, dui);
+                    etdui.requestFocus();
+                }
+            }
+        });
+
+        btneliminarautores.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(etdui.getText().toString().length()==0){
+                    etdui.setError("campo obligatorio");
+                    inputDui = false;
+                }else {
+                    inputDui=true;
+                }
+
+                if(inputDui){
+                    String dui = etdui.getText().toString();
+                    manto.EliminarAutor(MainActivity.this, dui);
+
+                    Limpiar();
                     etdui.requestFocus();
                 }
             }
