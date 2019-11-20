@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnconsultardui.setOnClickListener(new View.OnClickListener() {
+       /* btnconsultardui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+*/
         btnlimpiar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
