@@ -12,7 +12,7 @@ public class Config {
     public static final String urlactualizarAutores = "http://192.168.43.136/proyectomysql/actualizarAutor.php"; //actualizar la tabla autores
 
     //tabla himnario
-    public static final String urlGuardarhimanario = "http://192.168.43.142/proyectomysql/guardarHimnario.php";  //guardar en la tabla himnario
+    public static final String urlGuardarhimnario = "http://192.168.43.142/proyectomysql/guardarHimnario.php";  //guardar en la tabla himnario
 
     public static final String urlobtenerdatos = "http://192.168.43.136/proyectomysql/obtenertodo.php";  //obtener todos los datos
 
