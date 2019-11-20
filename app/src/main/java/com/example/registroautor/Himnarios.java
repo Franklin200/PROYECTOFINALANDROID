@@ -19,6 +19,9 @@ public class Himnarios {
         this.img = img;
     }
 
+    public Himnarios(String titulo, String descripcion, String categoria, String fecha, String img) {
+    }
+
     //Getter
 
     public int getId() {
