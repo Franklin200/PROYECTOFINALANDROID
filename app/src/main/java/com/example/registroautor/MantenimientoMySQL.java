@@ -110,7 +110,7 @@ public class MantenimientoMySQL {
                     @Override
                     public void onResponse(String response) {
 
-                        Toast.makeText(context, ""+response, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(context, ""+response, Toast.LENGTH_SHORT).show();
                         if(response.equals("0")) {
                             Toast.makeText(context, "No se encontrarón resultados para la búsqueda especificada.", Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
@@ -377,7 +377,7 @@ public class MantenimientoMySQL {
 
     public void guardarhimnario(final Context context, final String titulo, final String descripcion, final String categoria, final String fecha, final String dui){
         //Toast.makeText(context, "probando", Toast.LENGTH_SHORT).show();
-        String url = Config.urlGuardarhimanario;
+        String url = Config.urlGuardarhimnario;
         //String url = "localhost/democrudsis21a/guardar.php";
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
