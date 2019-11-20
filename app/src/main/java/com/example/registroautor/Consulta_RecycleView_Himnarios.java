@@ -148,4 +148,6 @@ public class Consulta_RecycleView_Himnarios extends AppCompatActivity {
             // MySingleton.getInstance(this).addToRequestQueue(stringRequest);
             MySingleton.getInstance(Consulta_RecycleView_Himnarios.this).addToRequestQueue(stringRequest);
         }
+
+
     }
