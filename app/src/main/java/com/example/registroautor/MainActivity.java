@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     String descripcion = "";
 
     MantenimientoMySQL manto = new MantenimientoMySQL();
+    Dto_autor datosAutor = new Dto_autor();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         btnlimpiar = (Button)findViewById(R.id.btn_nuevo);
         btnconsultardui = (Button)findViewById(R.id.btn_consultarAutordui);
         btneliminarautores = (Button)findViewById(R.id.btn_EliminarAutor);
+        btnactualizarAutores = (Button)findViewById(R.id.btn_actualizarAutores);
 
 
 
@@ -183,7 +185,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnactualizarAutores.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(etdui.getText().toString().length()==0){
+                    etdui.setError("campo obligatorio");
+                    inputDui = false;
+                }else {
+                    inputDui=true;
+                }
 
+                if(inputDui) {
+
+                    String dui = etdui.getText().toString();
+                    String nombre = etnombre.getText().toString();
+                    String edad = etedad.getText().toString();
+                    String descripcion = etdescripcion.getText().toString();
+
+                    datosAutor.setDui(Integer.parseInt(dui));
+                    datosAutor.setNombre(nombre);
+                    datosAutor.setEdad(Integer.parseInt(edad));
+                    datosAutor.setEdad(Integer.parseInt(edad));
+
+                    manto.actualizarAutores(MainActivity.this, datosAutor);
+                    Limpiar();
+                    etdui.requestFocus();
+                }
+            }
+        });
 
         btnlimpiar.setOnClickListener(new View.OnClickListener() {
             @Override
