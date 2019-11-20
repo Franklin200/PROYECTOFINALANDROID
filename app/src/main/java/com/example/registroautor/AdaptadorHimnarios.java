@@ -24,7 +24,7 @@ public class AdaptadorHimnarios extends  RecyclerView.Adapter<AdaptadorHimnarios
     @Override
     public HimnariosViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.list_layout, null);
+        View view = inflater.inflate(R.layout.list_layout2, null);
         return new HimnariosViewHolder(view);
     }
 
