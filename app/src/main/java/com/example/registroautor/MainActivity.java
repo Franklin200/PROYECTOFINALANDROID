@@ -21,7 +21,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private EditText etdui, etnombre, etedad, etdescripcion;
-    private Button btnguardarautor, btnlimpiar, btnconsultardui, btneliminarautores;
+    private Button btnguardarautor, btnlimpiar, btnconsultardui, btneliminarautores,btnactualizarAutores;
 
     String frank;
     boolean inputDui, inputN, inputE, inputD = false;
@@ -182,6 +182,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
 
         btnlimpiar.setOnClickListener(new View.OnClickListener() {
             @Override
