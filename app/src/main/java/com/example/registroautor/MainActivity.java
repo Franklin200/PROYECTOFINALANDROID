@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       /* btnconsultardui.setOnClickListener(new View.OnClickListener() {
+        btnconsultardui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -117,12 +117,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if(inputDui) {
                     String dui = etdui.getText().toString();
-                    manto.consultardui(MainActivity.this, dui);
+                    manto.consultarDui(MainActivity.this, dui);
                     etdui.requestFocus();
                 }
             }
         });
-*/
+
         btnlimpiar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
