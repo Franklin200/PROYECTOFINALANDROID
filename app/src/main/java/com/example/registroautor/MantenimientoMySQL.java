@@ -250,6 +250,9 @@ public class MantenimientoMySQL {
 
     }
 
+
+    //TABLA DE HIMANRIOS
+
     public void llenarspinner(final Context context, final String dui, final String nombre, final String edad, final String descripcion, String lista){
         progressDialog = new ProgressDialog(context);
         progressDialog.setCancelable(false);
