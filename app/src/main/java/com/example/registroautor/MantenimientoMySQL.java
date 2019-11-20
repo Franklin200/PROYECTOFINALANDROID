@@ -3,8 +3,10 @@ package com.example.registroautor;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
+import android.view.Gravity;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -160,6 +162,91 @@ public class MantenimientoMySQL {
         };
 
         MySingleton.getInstance(context).addToRequestQueue(stringRequest);
+
+    }
+
+    public void EliminarAutor(final Context context, final String dui){
+
+        progressDialog = new ProgressDialog(context);
+
+        dialogo = new AlertDialog.Builder(context);
+        dialogo.setIcon(R.drawable.ic_delete);
+        dialogo.setTitle("¡¡¡Advertencia!!!");
+        dialogo.setMessage("¿Realmente desea borrar el registro?\n" +
+                "Dui: "+dui);
+        dialogo.setCancelable(false);
+
+        dialogo.setPositiveButton("Aplicar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo, int id) {
+
+                progressDialog.setCancelable(false);
+                progressDialog.setMessage("Espere por favor, Estamos trabajando en el servidor");
+                progressDialog.show();
+
+                //String url = "http://mjgl.com.sv/mysqlcrud/eliminar.php";
+                String url  = Config.urlEliminarAutores;
+
+                StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            //Creamos un objeto JSONObject para poder acceder a los atributos (campos) del objeto.
+                            JSONObject respuestaJSON = new JSONObject(response.toString());         //Creo un JSONObject a partir del StringBuilder pasado a cadena
+                            String resultJSON = respuestaJSON.getString("estado");            // estado es el nombre del campo en el JSON
+                            String result_msj = respuestaJSON.getString("mensaje");           // estado es el nombre del campo en el JSON
+                            if (resultJSON.equals("1")) {
+
+                                Toast toast = Toast.makeText(context, result_msj, Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.CENTER, 0, 0);
+                                toast.show();
+
+                            } else if (resultJSON.equals("2")) {
+                                Toast toast = Toast.makeText(context, "--> Nothing." +
+                                        "\n" + result_msj, Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.CENTER, 0, 0);
+                                toast.show();
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        // Hiding the progress dialog after all task complete.
+                        progressDialog.dismiss();
+                    }
+
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Hiding the progress dialog after all task complete.
+                        progressDialog.dismiss();
+                        Toast.makeText(context, "Algo salio mal. Intente mas tarde\n" +
+                                "Verifique su acceso a Internet.", Toast.LENGTH_LONG).show();
+                    }
+                }) {
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> map = new HashMap<String, String>();
+                        map.put("Content-Type", "application/json; charset=utf-8");
+                        map.put("Accept", "application/json");
+                        map.put("dui", dui);
+                        return map;
+                    }
+                };
+
+                MySingleton.getInstance(context).addToRequestQueue(request);
+            }
+        });
+
+        dialogo.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogo, int id) {
+                Toast toast = Toast.makeText(context, "Operación Cancelada.", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+        });
+
+        //AlertDialog dialogo = builder.create();
+        dialogo.show();
 
     }
 
